@@ -21,7 +21,7 @@ export function HeroBento() {
           variants={staggerContainer(0.06)}
           initial="hidden"
           animate="visible"
-          className="bento md:auto-rows-[116px]"
+          className="bento md:auto-rows-[minmax(116px,auto)]"
         >
           {/* ------------------------------- Identity ------------------------------ */}
           <Tile
@@ -123,7 +123,8 @@ export function HeroBento() {
           {/* ------------------------------- Stack --------------------------------- */}
           <Tile interactive={false} className="col-span-2 justify-between md:col-span-2">
             <TileLabel>Stack</TileLabel>
-            <div className="relative mt-4 overflow-hidden">
+            {/* The row is sized by the taller socials tile, so centre the marquee in the slack. */}
+            <div className="relative mt-4 flex flex-1 items-center overflow-hidden">
               <div
                 aria-hidden
                 className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-tile to-transparent"
