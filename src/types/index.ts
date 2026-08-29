@@ -83,7 +83,7 @@ export interface Service {
   description: string;
   bullets: string[];
   icon: LucideIcon;
-  /** Card fill: one solid brand card, then two decreasing tints. */
-  tone: "solid" | "tint" | "subtle";
+  /** Card fill: lime-filled, or the standard dark tile. */
+  tone: "solid" | "dark";
   href?: string;
 }

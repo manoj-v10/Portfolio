@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 import { SectionLabel } from "@/components/SectionLabel";
 import type { Service } from "@/types";
 
-/** Descending fill intensity, mirroring the reference but in the page palette. */
+/** Lime, black, lime — the dark centre card keeps the two filled cards from competing. */
 const TONES: Record<
   Service["tone"],
   {
@@ -33,17 +33,7 @@ const TONES: Record<
     arrow: "bg-zinc-950 text-accent",
     rule: "bg-zinc-950/15",
   },
-  tint: {
-    card: "border-line bg-raised",
-    title: "text-zinc-50",
-    body: "text-zinc-500",
-    bullet: "text-zinc-300",
-    check: "text-accent",
-    icon: "text-accent",
-    arrow: "bg-accent text-zinc-950",
-    rule: "bg-line",
-  },
-  subtle: {
+  dark: {
     card: "border-line bg-tile",
     title: "text-zinc-50",
     body: "text-zinc-500",

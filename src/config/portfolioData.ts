@@ -504,7 +504,7 @@ export const services: Service[] = [
       "Role-Based Access",
     ],
     icon: Boxes,
-    tone: "tint",
+    tone: "dark",
   },
   {
     id: "web-mobile",
@@ -519,7 +519,7 @@ export const services: Service[] = [
       "REST & GraphQL APIs",
     ],
     icon: CodeXml,
-    tone: "subtle",
+    tone: "solid",
   },
 ];
 
