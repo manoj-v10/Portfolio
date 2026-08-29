@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-line;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    @apply bg-base text-zinc-300 antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  ::selection {
+    @apply bg-accent/25 text-white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-base;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full border-2 border-base bg-zinc-700;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-zinc-600;
+  }
+}
+
+@layer components {
+  .surface-card {
+    @apply relative rounded-2xl border border-line bg-surface shadow-card;
+  }
+
+  .hairline {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-line to-transparent;
+  }
+
+  .grid-backdrop {
+    background-image:
+      linear-gradient(to right, rgba(39, 39, 42, 0.45) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(39, 39, 42, 0.45) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 78% 58% at 50% 0%, #000 45%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 78% 58% at 50% 0%, #000 45%, transparent 100%);
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-br from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent;
+  }
+
+  .mono-label {
+    @apply font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-500;
+  }
+
+  /* Architecture lattice: stacked on small screens, a 4x2 grid once there is room. */
+  .lattice {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  @media (min-width: 900px) {
+    .lattice {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 3rem 2.75rem;
+    }
+
+    .lattice-node {
+      grid-column: var(--col);
+      grid-row: var(--row);
+    }
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
