@@ -151,14 +151,36 @@ function ProjectCard({
         </p>
 
         {isHero ? (
-          <ul className="mt-5 space-y-2">
-            {project.outcomes.map((outcome) => (
-              <li key={outcome} className="flex gap-2.5 text-[12px] text-zinc-400">
-                <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent" />
-                <span>{outcome}</span>
-              </li>
-            ))}
-          </ul>
+          <>
+            <ul className="mt-5 space-y-2">
+              {project.outcomes.map((outcome) => (
+                <li key={outcome} className="flex gap-2.5 text-[12px] text-zinc-400">
+                  <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent" />
+                  <span>{outcome}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* The hero tile is two rows tall; this keeps the extra height earning its place. */}
+            <div className="mt-7 rounded-tile-sm border border-line bg-base/40 p-4">
+              <TileLabel>In the deep dive</TileLabel>
+              <ul className="mt-3 space-y-2">
+                {project.challenges.map((challenge) => (
+                  <li
+                    key={challenge.problem}
+                    className="flex gap-2.5 text-[12px] leading-relaxed text-zinc-500"
+                  >
+                    <Target className="mt-0.5 h-3.5 w-3.5 shrink-0 text-zinc-600" />
+                    <span className="line-clamp-2">{challenge.problem}</span>
+                  </li>
+                ))}
+              </ul>
+              <span className="mt-4 inline-flex items-center gap-1.5 text-[12px] font-medium text-accent">
+                Read the full breakdown
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </span>
+            </div>
+          </>
         ) : (
           <p className="mt-4 flex gap-2.5 text-[12px] text-zinc-400">
             <CheckCircle2 className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent" />

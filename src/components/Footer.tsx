@@ -4,7 +4,7 @@ import { profile } from "@/config/portfolioData";
 
 export function Footer() {
   return (
-    <footer className="pb-28 pt-8 md:pb-16">
+    <footer className="pb-32 pt-8">
       <div className="container">
         <div className="hairline" />
         <div className="mt-8 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">

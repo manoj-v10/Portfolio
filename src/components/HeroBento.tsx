@@ -13,7 +13,7 @@ const [tenure] = stats;
 
 export function HeroBento() {
   return (
-    <section id="top" className="relative scroll-mt-28 pb-16 pt-24 md:pt-28">
+    <section id="top" className="relative scroll-mt-28 pb-16 pt-14 md:pt-20">
       <div aria-hidden className="pointer-events-none absolute inset-0 grid-backdrop" />
 
       <div className="container relative">

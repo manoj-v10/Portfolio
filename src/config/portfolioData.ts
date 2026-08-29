@@ -416,8 +416,8 @@ export const projects: Project[] = [
     summary:
       "A verification service for HR document review. A Netlify-hosted frontend hands uploads to a Python analysis engine, which scores documents for tampering signals and persists results and audit history to Neon Postgres.",
     year: "2025",
-    category: "Full-Stack / Analysis",
-    span: "regular",
+    category: "Full-Stack",
+    span: "wide",
     featured: false,
     tech: ["Next.js", "Python", "Neon Postgres", "Netlify"],
     challenges: [
@@ -448,7 +448,7 @@ export const projects: Project[] = [
       "A trip registration and booking portal for medical practitioners. Firebase Google authentication gates the flow, bookings persist per authenticated identity, and the whole thing ships as a static-fast Netlify deploy.",
     year: "2025",
     category: "Web App",
-    span: "regular",
+    span: "wide",
     featured: false,
     tech: ["Next.js", "Firebase Auth", "Firestore", "Netlify"],
     challenges: [

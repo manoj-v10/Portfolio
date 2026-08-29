@@ -41,7 +41,7 @@ export function PillNav() {
   }, []);
 
   return (
-    <nav className="fixed inset-x-0 bottom-5 z-50 flex justify-center px-4 md:bottom-auto md:top-5">
+    <nav className="fixed inset-x-0 bottom-5 z-50 flex justify-center px-4">
       <motion.ul
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}

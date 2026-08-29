@@ -35,7 +35,7 @@ export function SkillsSection() {
             <Tile
               key={group.id}
               className={cn(
-                "group justify-between",
+                "group justify-start",
                 group.span === "wide" ? "col-span-2 md:col-span-2" : "col-span-2 md:col-span-1",
               )}
             >
@@ -69,7 +69,7 @@ export function SkillsSection() {
                 </p>
               </div>
 
-              <ul className="relative mt-5 flex flex-wrap gap-1.5">
+              <ul className="relative mt-6 flex flex-wrap gap-1.5">
                 {group.skills.map((skill) => (
                   <li key={skill.name}>
                     <span className="inline-flex items-center gap-2 rounded-full border border-line bg-base/60 py-1 pl-3 pr-1 font-mono text-[11px] text-zinc-300">
