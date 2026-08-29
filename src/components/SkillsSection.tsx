@@ -29,7 +29,7 @@ export function SkillsSection() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="bento md:auto-rows-[minmax(180px,auto)]"
+          className="bento md:auto-rows-[minmax(0,auto)]"
         >
           {skillGroups.map((group) => (
             <Tile
@@ -72,7 +72,7 @@ export function SkillsSection() {
               <ul className="relative mt-6 flex flex-wrap gap-1.5">
                 {group.skills.map((skill) => (
                   <li key={skill.name}>
-                    <span className="inline-flex items-center gap-2 rounded-full border border-line bg-base/60 py-1 pl-3 pr-1 font-mono text-[11px] text-zinc-300">
+                    <span className="inline-flex items-center gap-2 rounded-full border border-line bg-base/60 py-1 pl-2.5 pr-1 font-mono text-[11px] text-zinc-300">
                       {skill.name}
                       <span
                         className={cn(

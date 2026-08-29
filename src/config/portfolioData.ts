@@ -191,7 +191,7 @@ export const skillGroups: SkillGroup[] = [
       "Business rules enforced at the document layer, and the pipelines that keep every downstream system honest.",
     icon: Boxes,
     accent: "cyan",
-    span: "regular",
+    span: "wide",
     skills: [
       { name: "ERPNext", level: "Core" },
       { name: "Frappe Server Scripts", level: "Core" },
@@ -206,7 +206,7 @@ export const skillGroups: SkillGroup[] = [
       "Typed contracts at the edge, access control resolved server-side, and integrity held where it actually matters.",
     icon: Network,
     accent: "cyan",
-    span: "regular",
+    span: "wide",
     skills: [
       { name: "Node.js", level: "Strong" },
       { name: "GraphQL", level: "Strong" },
@@ -253,7 +253,7 @@ export const skillGroups: SkillGroup[] = [
     description: "The everyday surface: version control, deployment targets and the shell underneath.",
     icon: Wrench,
     accent: "cyan",
-    span: "regular",
+    span: "wide",
     skills: [
       { name: "Git", level: "Core" },
       { name: "Linux", level: "Strong" },
