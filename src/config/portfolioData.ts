@@ -36,10 +36,9 @@ export const profile: Profile = {
   email: "manojvashee2003@gmail.com",
   phone: "+91 770-834-6030",
   availability: "Open for High-Impact Roles",
-  headline:
-    "Engineering Enterprise Platforms, Resilient ERP Integrations & Modern Web Architectures.",
+  headline: "Building Enterprise platforms that hold up.",
   subheadline:
-    "I lead the frontend and integration work on Elbrit One — a unified enterprise platform pulling sales, HR and inventory into one system. A Java full-stack foundation, component-driven UI in Plasmic, deep ERPNext customisation, and n8n pipelines that keep 480+ users looking at exactly the records they are allowed to see.",
+    "I build ERP integrations and the backend services behind them, the frontends that sit on top, and the web pages and dashboards that carry it all.",
   resumeHref: "/Manoj_V_FullStack_Developer_Resume.pdf",
   socials: [
     {

@@ -43,11 +43,10 @@ export function HeroBento() {
 
             <div className="relative mt-6">
               <h1 className="max-w-3xl text-balance text-[2rem] font-semibold leading-[1.04] tracking-tight text-gradient sm:text-[2.75rem] lg:text-[3.25rem]">
-                Building enterprise platforms that hold up.
+                {profile.headline}
               </h1>
               <p className="mt-4 max-w-2xl text-[13px] leading-relaxed text-zinc-500 sm:text-sm">
-                {profile.title} in {profile.location.split(",")[0]}. I work where the frontend, the
-                workflow layer and the system of record all have to agree.
+                {profile.title} in {profile.location.split(",")[0]}. {profile.subheadline}
               </p>
             </div>
           </Tile>
