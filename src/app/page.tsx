@@ -1,30 +1,24 @@
-import { ArchitectureShowcase } from "@/components/ArchitectureShowcase";
 import { ContactSection } from "@/components/ContactSection";
-import { Education } from "@/components/Education";
-import { ExperienceTimeline } from "@/components/ExperienceTimeline";
+import { EducationSection } from "@/components/EducationSection";
 import { Footer } from "@/components/Footer";
-import { Hero } from "@/components/Hero";
-import { Navbar } from "@/components/Navbar";
-import { ProjectsBento } from "@/components/ProjectsBento";
-import { SkillsGrid } from "@/components/SkillsGrid";
+import { HeroBento } from "@/components/HeroBento";
+import { PillNav } from "@/components/PillNav";
+import { ProjectsSection } from "@/components/ProjectsSection";
+import { ServicesSection } from "@/components/ServicesSection";
+import { SkillsSection } from "@/components/SkillsSection";
+import { WorkSection } from "@/components/WorkSection";
 
 export default function HomePage() {
   return (
     <>
-      <Navbar />
+      <PillNav />
       <main>
-        <Hero />
-        <div className="hairline" />
-        <ArchitectureShowcase />
-        <div className="hairline" />
-        <ExperienceTimeline />
-        <div className="hairline" />
-        <ProjectsBento />
-        <div className="hairline" />
-        <SkillsGrid />
-        <div className="hairline" />
-        <Education />
-        <div className="hairline" />
+        <HeroBento />
+        <WorkSection />
+        <ServicesSection />
+        <ProjectsSection />
+        <SkillsSection />
+        <EducationSection />
         <ContactSection />
       </main>
       <Footer />

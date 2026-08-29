@@ -1,35 +1,30 @@
 import {
   Activity,
   BarChart3,
-  Blocks,
   Boxes,
   Braces,
   Building2,
-  Cable,
+  CodeXml,
   Database,
   Github,
   Layers,
   Linkedin,
   Mail,
-  MonitorSmartphone,
   Network,
   RadioTower,
-  Server,
   ShieldCheck,
   Sparkles,
-  Users,
+  TabletSmartphone,
   Workflow,
   Wrench,
 } from "lucide-react";
 
 import type {
-  ArchitectureEdge,
-  ArchitectureNode,
   EducationItem,
   ExperienceItem,
-  NavItem,
   Profile,
   Project,
+  Service,
   SkillGroup,
   Stat,
 } from "@/types";
@@ -68,34 +63,8 @@ export const profile: Profile = {
   ],
 };
 
-export const navItems: NavItem[] = [
-  { label: "Architecture", href: "#architecture" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Education", href: "#education" },
-  { label: "Contact", href: "#contact" },
-];
 
 export const stats: Stat[] = [
-  {
-    value: "480+",
-    label: "Users Under Role-Based Access",
-    detail: "Record visibility resolved per user by role profile, territory and department.",
-    icon: Users,
-  },
-  {
-    value: "6-Level",
-    label: "Org Hierarchy Modelled",
-    detail: "Access control mapped across a six-tier organisational structure, not a flat role list.",
-    icon: ShieldCheck,
-  },
-  {
-    value: "3",
-    label: "Business Domains Unified",
-    detail: "Sales, HR and inventory operations consolidated behind one platform — Elbrit One.",
-    icon: Blocks,
-  },
   {
     value: "1.8 yrs",
     label: "Shipping Production Systems",
@@ -104,111 +73,7 @@ export const stats: Stat[] = [
   },
 ];
 
-/* -------------------------------------------------------------------------- */
-/*                          Interactive architecture                          */
-/* -------------------------------------------------------------------------- */
 
-export const architectureNodes: ArchitectureNode[] = [
-  {
-    id: "ui",
-    label: "Plasmic / Next.js UI",
-    kind: "client",
-    tagline: "Component-driven enterprise frontend",
-    icon: MonitorSmartphone,
-    stack: ["React.js", "Next.js", "Plasmic", "JavaScript", "Responsive UI/UX"],
-    specs: [
-      "UI built as reusable Plasmic components so visual consistency holds across modules and new features roll out without rebuilding layout each time.",
-      "Validation dashboards, conference landing pages and internal operational tools all compose from the same component library.",
-      "Navigation and available actions are derived from the signed-in user's role profile — one build serves every persona.",
-    ],
-    downstream: ["gateway"],
-    position: { col: 0, row: 1 },
-  },
-  {
-    id: "gateway",
-    label: "GraphQL / REST Gateway",
-    kind: "gateway",
-    tagline: "API contract & access control",
-    icon: Cable,
-    stack: ["GraphQL", "REST APIs", "Node.js", "Role-Based Access"],
-    specs: [
-      "GraphQL and REST endpoints architected for real-time ERPNext integration — invoices, stock ledgers and performance analytics stay synchronised rather than batch-imported.",
-      "Role-based data visibility is enforced here across a six-level organisational hierarchy: every query is scoped by role profile, territory and department before it reaches the client.",
-      "Serving 480+ users means the access rules are resolved server-side — the browser is never trusted to filter what it should not have received.",
-    ],
-    downstream: ["erp", "automation"],
-    position: { col: 1, row: 1 },
-  },
-  {
-    id: "erp",
-    label: "ERPNext / Frappe Engine",
-    kind: "service",
-    tagline: "Business rules & data integrity",
-    icon: Server,
-    stack: ["ERPNext", "Frappe", "Server Scripts", "Client Scripts", "Java", "SQL"],
-    specs: [
-      "Complex client-side and server-side scripts automate business workflows and enforce data integrity at the document layer.",
-      "Server scripts hold validation and approval logic, so the rules apply no matter which client submits the record.",
-      "Custom doctypes model sales, HR and inventory operations as one coherent domain instead of three disconnected systems.",
-    ],
-    downstream: ["db"],
-    position: { col: 2, row: 1 },
-  },
-  {
-    id: "db",
-    label: "PostgreSQL / Neon",
-    kind: "data",
-    tagline: "System of record",
-    icon: Database,
-    stack: ["PostgreSQL (Neon DB)", "Firebase / Firestore", "NoSQL", "SQL"],
-    specs: [
-      "Serverless Postgres on Neon backs the transactional data; Firestore covers the document-shaped and realtime cases.",
-      "Reporting reads are served from curated views so analytics traffic never contends with the write path.",
-      "Synchronisation writes are keyed so a replayed job converges instead of duplicating a ledger entry.",
-    ],
-    downstream: ["observability"],
-    position: { col: 3, row: 1 },
-  },
-  {
-    id: "automation",
-    label: "n8n Automation Layer",
-    kind: "ops",
-    tagline: "Pipelines & process workflows",
-    icon: Workflow,
-    stack: ["n8n", "Webhooks", "Scheduled Jobs"],
-    specs: [
-      "Automated data pipelines and process workflows built in n8n, cutting manual intervention across business modules.",
-      "Scheduled and event-driven runs fan out into ERP, reporting and notification targets from one versioned workflow.",
-      "Failure branches capture the payload and re-queue the run rather than dropping it silently.",
-    ],
-    downstream: ["observability"],
-    position: { col: 2, row: 0 },
-  },
-  {
-    id: "observability",
-    label: "Power BI / Sentry",
-    kind: "ops",
-    tagline: "Analytics & error monitoring",
-    icon: Activity,
-    stack: ["Power BI", "Custom Connectors", "Sentry"],
-    specs: [
-      "Power BI integrated for real-time visualisation, with custom connectors surfacing actionable KPIs directly inside the platform instead of in a separate portal.",
-      "Sentry provides error tracking and performance monitoring, so a failed sync surfaces with its context rather than at month-end.",
-      "Alerting is tied to pipeline health, which is what business users actually feel when something breaks.",
-    ],
-    downstream: [],
-    position: { col: 3, row: 0 },
-  },
-];
-
-export const architectureEdges: ArchitectureEdge[] = [
-  { from: "ui", to: "gateway", protocol: "GraphQL / REST" },
-  { from: "gateway", to: "erp", protocol: "Scoped by role" },
-  { from: "gateway", to: "automation", protocol: "Webhook trigger" },
-  { from: "erp", to: "db", protocol: "Transactional write" },
-  { from: "automation", to: "observability", protocol: "Run telemetry" },
-  { from: "db", to: "observability", protocol: "Analytics views" },
-];
 
 /* -------------------------------------------------------------------------- */
 /*                                 Experience                                 */
@@ -604,6 +469,58 @@ export const projects: Project[] = [
       "Booking records attributable to a verified identity",
     ],
     links: {},
+  },
+];
+
+/* -------------------------------------------------------------------------- */
+/*                                  Services                                  */
+/* -------------------------------------------------------------------------- */
+
+export const services: Service[] = [
+  {
+    id: "wordpress",
+    title: "WordPress & Plugin Development.",
+    description:
+      "Business sites and web pages on WordPress — custom plugins, forms and theme work that stays maintainable after launch.",
+    bullets: [
+      "Custom Plugin Development",
+      "Forms & Integrations",
+      "Theme & Design Handling",
+      "Page Building & Layouts",
+      "Performance & SEO",
+    ],
+    icon: TabletSmartphone,
+    tone: "solid",
+  },
+  {
+    id: "erp",
+    title: "ERP Integration & Automation.",
+    description:
+      "ERPNext customisation and the pipelines that keep every downstream system in step.",
+    bullets: [
+      "ERPNext Customisation",
+      "Client & Server Scripts",
+      "n8n Data Pipelines",
+      "GraphQL & REST Sync",
+      "Role-Based Access",
+    ],
+    icon: Boxes,
+    tone: "tint",
+  },
+  {
+    id: "web-mobile",
+    title: "Web & Enterprise Platform Development",
+    description:
+      "Product-grade frontends on Next.js and React, and the enterprise platforms built on top of them.",
+    bullets: [
+      "Next.js & React",
+      "Plasmic Components",
+      "Responsive UI/UX",
+      "Dashboards & Tooling",
+      "REST & GraphQL APIs",
+    ],
+    icon: CodeXml,
+    tone: "subtle",
   },
 ];
 

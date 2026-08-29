@@ -5,104 +5,121 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Check, Copy, MapPin, Phone, Send } from "lucide-react";
 
 import { profile } from "@/config/portfolioData";
-import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
-import { ButtonLink } from "@/components/ui/button";
-import { SectionHeading } from "@/components/SectionHeading";
+import { staggerContainer, viewportOnce } from "@/lib/motion";
+import { cn } from "@/lib/utils";
+import { SectionLabel } from "@/components/SectionLabel";
+import { Tile, TileLabel } from "@/components/Tile";
 
 export function ContactSection() {
   return (
-    <section id="contact" className="scroll-mt-24 py-24 sm:py-28">
+    <section id="contact" className="scroll-mt-28 py-16 md:py-20">
       <div className="container">
-        <SectionHeading
-          index="06"
+        <SectionLabel
           eyebrow="Contact"
-          title="Building something that has to hold up? Let's talk."
+          title="Building something that has to hold up?"
           description="Open to full-stack and integration-heavy roles where the frontend, the workflow layer and the system of record all have to agree."
         />
 
         <motion.div
-          variants={staggerContainer(0.08)}
+          variants={staggerContainer(0.06)}
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="mt-12 grid gap-4 lg:grid-cols-[1.3fr_1fr]"
+          className="bento md:auto-rows-[minmax(130px,auto)]"
         >
-          <motion.div variants={fadeUp} className="surface-card relative overflow-hidden p-8">
+          {/* Primary CTA */}
+          <Tile
+            interactive={false}
+            className="col-span-2 row-span-2 justify-between md:col-span-2 md:row-span-2"
+          >
             <div
               aria-hidden
-              className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-accent/10 blur-3xl"
+              className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-accent/10 blur-3xl"
             />
-
             <div className="relative">
-              <p className="mono-label">Direct line</p>
-              <h3 className="mt-3 text-2xl font-semibold tracking-tight text-zinc-50">
+              <TileLabel>Direct line</TileLabel>
+              <p className="mt-4 break-all text-lg font-semibold tracking-tight text-zinc-50 sm:text-xl">
                 {profile.email}
-              </h3>
-              <p className="mt-3 max-w-md text-sm leading-relaxed text-zinc-500">
+              </p>
+              <p className="mt-3 text-[13px] leading-relaxed text-zinc-500">
                 Fastest way to reach me. I reply to anything with a real problem attached.
               </p>
-
-              <div className="mt-7 flex flex-wrap items-center gap-3">
-                <CopyEmailButton email={profile.email} />
-                <ButtonLink href={`mailto:${profile.email}`} variant="secondary">
-                  <Send className="h-4 w-4" />
-                  Compose email
-                </ButtonLink>
-              </div>
-
-              <div className="my-7 hairline" />
-
-              <a
-                href={`tel:${profile.phone.replace(/[^+\d]/g, "")}`}
-                className="group/phone inline-flex items-center gap-2.5 font-mono text-sm text-zinc-400 transition-colors hover:text-accent"
-              >
-                <Phone className="h-3.5 w-3.5 text-zinc-600 transition-colors group-hover/phone:text-accent" />
-                {profile.phone}
-              </a>
-
-              <div className="my-7 hairline" />
-
-              <p className="inline-flex items-center gap-2 font-mono text-xs text-zinc-600">
-                <MapPin className="h-3.5 w-3.5" />
-                {profile.location}
-                <span className="text-zinc-800">·</span>
-                <span className="inline-flex items-center gap-1.5 text-accent">
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse-dot" />
-                  {profile.availability}
-                </span>
-              </p>
             </div>
-          </motion.div>
 
-          <motion.div variants={fadeUp} className="grid gap-4">
-            {profile.socials.map((social) => (
+            <div className="relative mt-6 flex flex-wrap items-center gap-2">
+              <CopyEmailButton />
               <a
-                key={social.label}
-                href={social.href}
-                target={social.href.startsWith("mailto:") ? undefined : "_blank"}
-                rel="noreferrer noopener"
-                className="surface-card group flex items-center gap-4 p-5 transition-colors hover:border-zinc-700 hover:bg-elevated"
+                href={`mailto:${profile.email}`}
+                className="inline-flex h-10 items-center gap-2 rounded-full border border-line bg-base px-4 text-[13px] text-zinc-200 transition-colors hover:border-zinc-600 hover:bg-raised"
               >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-line bg-elevated text-zinc-400 transition-colors group-hover:border-accent/40 group-hover:text-accent">
-                  <social.icon className="h-[18px] w-[18px]" />
-                </span>
-                <span className="min-w-0 flex-1">
-                  <span className="block text-sm font-medium text-zinc-200">{social.label}</span>
-                  <span className="block truncate font-mono text-xs text-zinc-600">
-                    {social.handle}
-                  </span>
-                </span>
-                <ArrowUpRight className="h-4 w-4 shrink-0 text-zinc-700 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" />
+                <Send className="h-4 w-4" />
+                Compose
               </a>
-            ))}
-          </motion.div>
+            </div>
+          </Tile>
+
+          {/* Phone */}
+          <a
+            href={`tel:${profile.phone.replace(/[^+\d]/g, "")}`}
+            className="tile tile-interactive group col-span-1 justify-between p-5 md:col-span-1"
+          >
+            <Phone className="h-4 w-4 text-pop-amber" />
+            <p className="mt-3 font-mono text-[13px] font-medium text-zinc-200">
+              {profile.phone}
+            </p>
+            <TileLabel className="mt-1">Call or WhatsApp</TileLabel>
+          </a>
+
+          {/* Location */}
+          <Tile className="col-span-1 justify-between">
+            <MapPin className="h-4 w-4 text-pop-cyan" />
+            <p className="mt-3 text-[13px] font-medium text-zinc-200">{profile.location}</p>
+            <TileLabel className="mt-1">IST · UTC+5:30</TileLabel>
+          </Tile>
+
+          {/* Availability */}
+          <Tile interactive={false} className="col-span-2 justify-between md:col-span-2">
+            <div className="flex items-center gap-2.5">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-70" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+              </span>
+              <TileLabel className="text-accent">{profile.availability}</TileLabel>
+            </div>
+            <p className="mt-4 text-[13px] leading-relaxed text-zinc-500">
+              Currently at Elbrit Life Sciences, and open to conversations about full-stack and ERP
+              integration roles.
+            </p>
+          </Tile>
+
+          {/* Socials */}
+          {profile.socials.map((social) => (
+            <a
+              key={social.label}
+              href={social.href}
+              target={social.href.startsWith("mailto:") ? undefined : "_blank"}
+              rel="noreferrer noopener"
+              className="tile tile-interactive group col-span-2 flex-row items-center gap-4 p-5 md:col-span-4"
+            >
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-tile-sm border border-line bg-base text-zinc-400 transition-colors group-hover:border-accent/40 group-hover:text-accent">
+                <social.icon className="h-[18px] w-[18px]" />
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block text-[13px] font-medium text-zinc-200">{social.label}</span>
+                <span className="block truncate font-mono text-[11px] text-zinc-600">
+                  {social.handle}
+                </span>
+              </span>
+              <ArrowUpRight className="h-4 w-4 shrink-0 text-zinc-700 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" />
+            </a>
+          ))}
         </motion.div>
       </div>
     </section>
   );
 }
 
-function CopyEmailButton({ email }: { email: string }) {
+function CopyEmailButton() {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
@@ -113,11 +130,11 @@ function CopyEmailButton({ email }: { email: string }) {
 
   const copy = async () => {
     try {
-      await navigator.clipboard.writeText(email);
+      await navigator.clipboard.writeText(profile.email);
       setCopied(true);
     } catch {
       // Clipboard can be blocked by permissions — fall back to a manual selection prompt.
-      window.prompt("Copy the address:", email);
+      window.prompt("Copy the address:", profile.email);
     }
   };
 
@@ -125,11 +142,16 @@ function CopyEmailButton({ email }: { email: string }) {
     <button
       type="button"
       onClick={copy}
-      className="inline-flex h-11 items-center gap-2 rounded-xl bg-accent px-5 text-sm font-medium text-zinc-950 transition-all hover:bg-accent-soft hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
       aria-live="polite"
+      className={cn(
+        "inline-flex h-10 items-center gap-2 rounded-full px-4 text-[13px] font-medium transition-all",
+        copied
+          ? "bg-accent-soft text-zinc-950"
+          : "bg-accent text-zinc-950 hover:bg-accent-soft hover:shadow-glow",
+      )}
     >
       {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-      {copied ? "Copied to clipboard" : "Copy email"}
+      {copied ? "Copied" : "Copy email"}
     </button>
   );
 }

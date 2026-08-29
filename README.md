@@ -31,18 +31,17 @@ src/
 ├── app/
 │   ├── layout.tsx          # fonts, metadata, viewport theme
 │   ├── page.tsx            # section composition
-│   └── globals.css         # tokens, .surface-card, .lattice grid
+│   └── globals.css         # tokens, .tile, .bento grid
 ├── components/
-│   ├── ui/                 # Button, Badge, Card
-│   ├── Navbar.tsx          # scroll-spy nav with shared layoutId indicator
-│   ├── Hero.tsx            # badge, headline, stats row, tech marquee
-│   ├── ArchitectureShowcase.tsx  # interactive node diagram (measured SVG edges)
-│   ├── ExperienceTimeline.tsx
-│   ├── ProjectsBento.tsx   # bento grid + deep-dive modal (portal)
-│   ├── SkillsGrid.tsx
-│   ├── Education.tsx
-│   ├── ContactSection.tsx  # copy-to-clipboard email + tel: link
-│   ├── SectionHeading.tsx
+│   ├── Tile.tsx            # the bento cell primitive every section composes
+│   ├── PillNav.tsx         # floating pill nav with scroll-spy
+│   ├── HeroBento.tsx       # signature grid: identity, stat + status tiles
+│   ├── WorkSection.tsx     # role header + focus-area tiles + impact
+│   ├── ProjectsSection.tsx # project tiles + deep-dive modal (portal)
+│   ├── SkillsSection.tsx
+│   ├── EducationSection.tsx
+│   ├── ContactSection.tsx  # copy-to-clipboard email, tel: link
+│   ├── SectionLabel.tsx
 │   └── Footer.tsx
 ├── config/
 │   └── portfolioData.ts    # ALL content lives here — typed, no prose in components
@@ -60,9 +59,7 @@ against [`src/types/index.ts`](src/types/index.ts). Components never hardcode co
 
 - **Projects** — add to `projects`. `span: "hero" | "wide" | "regular"` controls bento footprint;
   `links.live` / `links.repo` render the corresponding buttons only when present.
-- **Architecture** — `architectureNodes` carries `position: { col, row }` on a 4×2 lattice and
-  `downstream` ids. Edges are drawn from measured DOM boxes, so adding a node needs no coordinates
-  beyond its grid cell. Selecting a node lights its full transitive downstream pathway.
+- **Hero tiles** — `HeroBento.tsx` composes the grid directly; spans are plain `col-span-*` / `row-span-*` utilities on each `Tile`.
 - **Skills** — `span: "wide"` makes a card span two columns; `level` drives the Core/Strong/Working chip.
 
 ## Before deploying
@@ -75,5 +72,4 @@ against [`src/types/index.ts`](src/types/index.ts). Components never hardcode co
 
 - Fully static — `next build` prerenders the single route; deploys to Vercel or Netlify as-is.
 - Motion respects `prefers-reduced-motion` via a global override in `globals.css`.
-- The architecture diagram recomputes its edges through a `ResizeObserver`, so it survives
-  responsive reflow and font loading without hardcoded coordinates.
+- The bento grid is 2 columns on phones and 4 from 768px up; every tile declares its own span.

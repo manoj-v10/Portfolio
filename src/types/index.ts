@@ -27,30 +27,6 @@ export interface Stat {
   icon: LucideIcon;
 }
 
-export type NodeKind = "client" | "gateway" | "service" | "data" | "ops";
-
-export interface ArchitectureNode {
-  id: string;
-  label: string;
-  kind: NodeKind;
-  tagline: string;
-  icon: LucideIcon;
-  /** Tech implemented at this layer. */
-  stack: string[];
-  /** Concrete engineering specifics surfaced when the node is selected. */
-  specs: string[];
-  /** Ids of downstream nodes this one pushes data into. */
-  downstream: string[];
-  /** Column / row placement on the diagram lattice. */
-  position: { col: number; row: number };
-}
-
-export interface ArchitectureEdge {
-  from: string;
-  to: string;
-  protocol: string;
-}
-
 export interface ExperienceItem {
   company: string;
   role: string;
@@ -101,7 +77,13 @@ export interface EducationItem {
   field?: string;
 }
 
-export interface NavItem {
-  label: string;
-  href: string;
+export interface Service {
+  id: string;
+  title: string;
+  description: string;
+  bullets: string[];
+  icon: LucideIcon;
+  /** Card fill: one solid brand card, then two decreasing tints. */
+  tone: "solid" | "tint" | "subtle";
+  href?: string;
 }
