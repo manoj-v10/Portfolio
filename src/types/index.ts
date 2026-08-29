@@ -12,6 +12,7 @@ export interface Profile {
   title: string;
   location: string;
   email: string;
+  phone: string;
   availability: string;
   headline: string;
   subheadline: string;
@@ -90,6 +91,14 @@ export interface Project {
   challenges: { problem: string; solution: string }[];
   outcomes: string[];
   links: { live?: string; repo?: string };
+}
+
+export interface EducationItem {
+  qualification: string;
+  institution: string;
+  period: string;
+  result: string;
+  field?: string;
 }
 
 export interface NavItem {

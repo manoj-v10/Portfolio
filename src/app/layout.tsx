@@ -17,7 +17,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 const description =
-  "Full-stack developer and ERP integration specialist building enterprise platforms, resilient ERPNext integrations, n8n data pipelines and modern web architectures.";
+  "Full-stack developer and ERP integration specialist with 1.8 years building Elbrit One, a unified enterprise platform for sales, HR and inventory operations, on Next.js, Plasmic, ERPNext, GraphQL and n8n.";
 
 export const metadata: Metadata = {
   title: {
@@ -27,14 +27,17 @@ export const metadata: Metadata = {
   description,
   keywords: [
     "Full-Stack Developer",
-    "ERP Integration",
+    "ERP Integration Specialist",
     "ERPNext",
     "Frappe",
     "Next.js",
+    "React.js",
     "Plasmic",
     "n8n",
     "GraphQL",
+    "REST APIs",
     "PostgreSQL",
+    "Power BI",
     "Chennai",
   ],
   authors: [{ name: profile.name, url: profile.socials[0].href }],

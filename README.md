@@ -40,7 +40,8 @@ src/
 │   ├── ExperienceTimeline.tsx
 │   ├── ProjectsBento.tsx   # bento grid + deep-dive modal (portal)
 │   ├── SkillsGrid.tsx
-│   ├── ContactSection.tsx  # copy-to-clipboard email
+│   ├── Education.tsx
+│   ├── ContactSection.tsx  # copy-to-clipboard email + tel: link
 │   ├── SectionHeading.tsx
 │   └── Footer.tsx
 ├── config/
@@ -66,7 +67,7 @@ against [`src/types/index.ts`](src/types/index.ts). Components never hardcode co
 
 ## Before deploying
 
-1. Add `public/Manoj_V_Resume.pdf` (see [`public/README.md`](public/README.md)).
+1. ~~Add the resume PDF~~ — `public/Manoj_V_FullStack_Developer_Resume.pdf` is in place.
 2. Fill in `links.live` / `links.repo` on any project whose source is public.
 3. Optionally add an OG image and wire `openGraph.images` in `src/app/layout.tsx`.
 

@@ -1,6 +1,6 @@
 # public/
 
-Drop `Manoj_V_Resume.pdf` here — the hero and navbar both link to `/Manoj_V_Resume.pdf`
+Drop `Manoj_V_FullStack_Developer_Resume.pdf` here — the hero and navbar both link to `/Manoj_V_FullStack_Developer_Resume.pdf`
 (configured as `profile.resumeHref` in `src/config/portfolioData.ts`).
 
 Optional additions:

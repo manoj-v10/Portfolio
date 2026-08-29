@@ -1,5 +1,6 @@
 import { ArchitectureShowcase } from "@/components/ArchitectureShowcase";
 import { ContactSection } from "@/components/ContactSection";
+import { Education } from "@/components/Education";
 import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
@@ -21,6 +22,8 @@ export default function HomePage() {
         <ProjectsBento />
         <div className="hairline" />
         <SkillsGrid />
+        <div className="hairline" />
+        <Education />
         <div className="hairline" />
         <ContactSection />
       </main>

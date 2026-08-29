@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Check, Copy, MapPin, Send } from "lucide-react";
+import { ArrowUpRight, Check, Copy, MapPin, Phone, Send } from "lucide-react";
 
 import { profile } from "@/config/portfolioData";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
@@ -14,7 +14,7 @@ export function ContactSection() {
     <section id="contact" className="scroll-mt-24 py-24 sm:py-28">
       <div className="container">
         <SectionHeading
-          index="05"
+          index="06"
           eyebrow="Contact"
           title="Building something that has to hold up? Let's talk."
           description="Open to full-stack and integration-heavy roles where the frontend, the workflow layer and the system of record all have to agree."
@@ -49,6 +49,16 @@ export function ContactSection() {
                   Compose email
                 </ButtonLink>
               </div>
+
+              <div className="my-7 hairline" />
+
+              <a
+                href={`tel:${profile.phone.replace(/[^+\d]/g, "")}`}
+                className="group/phone inline-flex items-center gap-2.5 font-mono text-sm text-zinc-400 transition-colors hover:text-accent"
+              >
+                <Phone className="h-3.5 w-3.5 text-zinc-600 transition-colors group-hover/phone:text-accent" />
+                {profile.phone}
+              </a>
 
               <div className="my-7 hairline" />
 
