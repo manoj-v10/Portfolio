@@ -34,7 +34,7 @@ export const profile: Profile = {
   title: "Full-Stack Developer & ERP Integration Specialist",
   location: "Chennai, India",
   email: "manojvashee2003@gmail.com",
-  phone: "+91 770-834-6030",
+  phone: "+91 959-722-1686",
   availability: "Open for High-Impact Roles",
   headline: "Building Enterprise platforms with",
   headlineHighlight: "Code & AI.",
