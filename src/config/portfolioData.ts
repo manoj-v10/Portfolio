@@ -521,21 +521,6 @@ export const services: Service[] = [
     icon: CodeXml,
     tone: "solid",
   },
-  {
-    id: "ai-assisted",
-    title: "AI-Assisted Development.",
-    description:
-      "Models used as real leverage on delivery work — scaffolding, review and integration — not as a novelty.",
-    bullets: [
-      "Prompt Engineering",
-      "LLM Integration",
-      "Claude & Cursor",
-      "GitHub Copilot",
-      "AI-Assisted Review",
-    ],
-    icon: Sparkles,
-    tone: "dark",
-  },
 ];
 
 /* -------------------------------------------------------------------------- */
