@@ -11,10 +11,10 @@ export function Footer() {
           <div>
             <p className="font-mono text-[13px] text-zinc-400">
               {profile.name}
-              <span className="text-zinc-700"> — </span>
-              <span className="text-zinc-600">{profile.title}</span>
+              <span className="text-zinc-500"> — </span>
+              <span className="text-muted">{profile.title}</span>
             </p>
-            <p className="mt-1.5 font-mono text-[11px] text-zinc-700">
+            <p className="mt-1.5 font-mono text-[11px] text-zinc-500">
               Built with Next.js, TypeScript, Tailwind CSS &amp; Framer Motion.
             </p>
           </div>
@@ -27,7 +27,7 @@ export function Footer() {
                 target={social.href.startsWith("mailto:") ? undefined : "_blank"}
                 rel="noreferrer noopener"
                 aria-label={social.label}
-                className="text-zinc-600 transition-colors hover:text-accent"
+                className="text-muted transition-colors hover:text-accent"
               >
                 <social.icon className="h-[18px] w-[18px]" />
               </a>
@@ -36,7 +36,7 @@ export function Footer() {
             <a
               href="#top"
               aria-label="Back to top"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-line bg-tile text-zinc-500 transition-colors hover:border-accent/40 hover:text-accent"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-line bg-tile text-zinc-400 transition-colors hover:border-accent/40 hover:text-accent"
             >
               <ArrowUp className="h-4 w-4" />
             </a>

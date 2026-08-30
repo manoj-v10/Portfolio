@@ -41,7 +41,7 @@ export function ContactSection() {
               <p className="mt-4 break-all text-lg font-semibold tracking-tight text-zinc-50 sm:text-xl">
                 {profile.email}
               </p>
-              <p className="mt-3 text-[13px] leading-relaxed text-zinc-500">
+              <p className="mt-3 text-[13px] leading-relaxed text-zinc-400">
                 Fastest way to reach me. I reply to anything with a real problem attached.
               </p>
             </div>
@@ -86,7 +86,7 @@ export function ContactSection() {
               </span>
               <TileLabel className="text-accent">{profile.availability}</TileLabel>
             </div>
-            <p className="mt-4 text-[13px] leading-relaxed text-zinc-500">
+            <p className="mt-4 text-[13px] leading-relaxed text-zinc-400">
               Currently at Elbrit Life Sciences, and open to conversations about full-stack and ERP
               integration roles.
             </p>
@@ -106,11 +106,11 @@ export function ContactSection() {
               </span>
               <span className="min-w-0 flex-1">
                 <span className="block text-[13px] font-medium text-zinc-200">{social.label}</span>
-                <span className="block truncate font-mono text-[11px] text-zinc-600">
+                <span className="block truncate font-mono text-[11px] text-muted">
                   {social.handle}
                 </span>
               </span>
-              <ArrowUpRight className="h-4 w-4 shrink-0 text-zinc-700 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" />
+              <ArrowUpRight className="h-4 w-4 shrink-0 text-zinc-500 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" />
             </a>
           ))}
         </motion.div>

@@ -46,7 +46,7 @@ export function HeroBento() {
                 <span className="text-gradient">{profile.headline} </span>
                 <span className="text-accent">{profile.headlineHighlight}</span>
               </h1>
-              <p className="mt-4 max-w-2xl text-[13px] leading-relaxed text-zinc-500 sm:text-sm">
+              <p className="mt-4 max-w-2xl text-[13px] leading-relaxed text-zinc-400 sm:text-sm">
                 {profile.title} in {profile.location.split(",")[0]}. {profile.subheadline}
               </p>
             </div>
@@ -114,7 +114,7 @@ export function HeroBento() {
                   rel="noreferrer noopener"
                   className="group flex flex-col items-start gap-2 rounded-tile-sm border border-line bg-base/60 p-3 transition-colors hover:border-zinc-600 hover:bg-raised"
                 >
-                  <social.icon className="h-4 w-4 text-zinc-500 transition-colors group-hover:text-accent" />
+                  <social.icon className="h-4 w-4 text-zinc-400 transition-colors group-hover:text-accent" />
                   <span className="text-[11px] text-zinc-400">{social.label}</span>
                 </a>
               ))}
@@ -138,7 +138,7 @@ export function HeroBento() {
                 {[...techMarquee, ...techMarquee].map((tech, index) => (
                   <span
                     key={`${tech}-${index}`}
-                    className="whitespace-nowrap rounded-full border border-line bg-base/60 px-3 py-1.5 font-mono text-[11px] text-zinc-500"
+                    className="whitespace-nowrap rounded-full border border-line bg-base/60 px-3 py-1.5 font-mono text-[11px] text-zinc-400"
                   >
                     {tech}
                   </span>
@@ -180,7 +180,7 @@ function CopyEmail() {
         "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 font-mono text-[10px] transition-colors",
         copied
           ? "border-accent/40 bg-accent/10 text-accent"
-          : "border-line text-zinc-500 hover:border-zinc-600 hover:text-zinc-200",
+          : "border-line text-zinc-400 hover:border-zinc-600 hover:text-zinc-200",
       )}
     >
       {copied ? <Check className="h-3 w-3" /> : <Copy className="h-3 w-3" />}

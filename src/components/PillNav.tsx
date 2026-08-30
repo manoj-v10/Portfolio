@@ -57,7 +57,7 @@ export function PillNav() {
                 aria-current={isActive ? "true" : undefined}
                 className={cn(
                   "relative flex items-center gap-2 rounded-full px-3.5 py-2 text-[13px] transition-colors sm:px-4",
-                  isActive ? "text-zinc-950" : "text-zinc-500 hover:text-zinc-200",
+                  isActive ? "text-zinc-950" : "text-zinc-400 hover:text-zinc-200",
                 )}
               >
                 {isActive ? (

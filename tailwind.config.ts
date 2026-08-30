@@ -12,9 +12,11 @@ const config: Config = {
     extend: {
       colors: {
         base: "#0a0a0c",
-        tile: "#141417",
-        raised: "#1c1c21",
-        line: "#26262c",
+        tile: "#202025",
+        raised: "#2a2a31",
+        line: "#33333b",
+        // Dimmest neutral that still clears 4.5:1 on the card surface.
+        muted: "#8a8a90",
         accent: {
           DEFAULT: "#a3e635",
           soft: "#bef264",

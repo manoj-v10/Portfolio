@@ -38,7 +38,7 @@ export function EducationSection() {
                 <h3 className="text-[15px] font-semibold leading-snug tracking-tight text-zinc-100">
                   {item.qualification}
                 </h3>
-                <p className="mt-1.5 text-[13px] text-zinc-500">{item.institution}</p>
+                <p className="mt-1.5 text-[13px] text-zinc-400">{item.institution}</p>
               </div>
 
               <div className="my-4 hairline" />

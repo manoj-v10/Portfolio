@@ -15,7 +15,7 @@ import type { SkillGroup } from "@/types";
 const LEVEL_STYLES: Record<string, string> = {
   Core: "border-accent/40 bg-accent/15 text-accent",
   Strong: "border-pop-cyan/30 bg-pop-cyan/10 text-pop-cyan",
-  Working: "border-line bg-base text-zinc-500",
+  Working: "border-line bg-base text-zinc-400",
 };
 
 export function SkillsSection() {
@@ -71,7 +71,7 @@ function SkillGroupCard({ group }: { group: SkillGroup }) {
           <TileLabel className="ml-auto shrink-0">{group.skills.length}</TileLabel>
         </div>
 
-        <p className="mt-3.5 text-[12px] leading-relaxed text-zinc-500">{group.description}</p>
+        <p className="mt-3.5 text-[12px] leading-relaxed text-zinc-400">{group.description}</p>
       </div>
 
       <div className="relative mt-6 grid grid-cols-3 gap-2 sm:grid-cols-4">
@@ -115,11 +115,11 @@ function TechTile({ name, level }: { name: string; level: string }) {
       <span className="relative flex flex-1 items-center">
         <TechIcon
           name={name}
-          className="h-7 w-7 text-zinc-500 transition-colors duration-300 group-hover/tile:text-[color:var(--brand)]"
+          className="h-7 w-7 text-zinc-400 transition-colors duration-300 group-hover/tile:text-[color:var(--brand)]"
         />
       </span>
 
-      <span className="relative line-clamp-2 w-full text-balance px-0.5 text-center text-[10px] leading-tight text-zinc-600 transition-colors duration-300 group-hover/tile:text-zinc-300">
+      <span className="relative line-clamp-2 w-full text-balance px-0.5 text-center text-[10px] leading-tight text-muted transition-colors duration-300 group-hover/tile:text-zinc-300">
         {displayName(name)}
       </span>
 

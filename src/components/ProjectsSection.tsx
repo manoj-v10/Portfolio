@@ -127,7 +127,7 @@ function ProjectCard({
 
           <span
             aria-hidden
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-line bg-base text-zinc-500 transition-all duration-300 group-hover:rotate-45 group-hover:border-accent group-hover:bg-accent group-hover:text-zinc-950"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-line bg-base text-zinc-400 transition-all duration-300 group-hover:rotate-45 group-hover:border-accent group-hover:bg-accent group-hover:text-zinc-950"
           >
             <ArrowUpRight className="h-4 w-4" />
           </span>
@@ -141,7 +141,7 @@ function ProjectCard({
         >
           {project.name}
         </h3>
-        <p className="mt-1.5 text-[12px] leading-relaxed text-zinc-500">{project.tagline}</p>
+        <p className="mt-1.5 text-[12px] leading-relaxed text-zinc-400">{project.tagline}</p>
 
         <p
           className={cn(
@@ -170,9 +170,9 @@ function ProjectCard({
                 {project.challenges.map((challenge) => (
                   <li
                     key={challenge.problem}
-                    className="flex gap-2.5 text-[12px] leading-relaxed text-zinc-500"
+                    className="flex gap-2.5 text-[12px] leading-relaxed text-zinc-400"
                   >
-                    <Target className="mt-0.5 h-3.5 w-3.5 shrink-0 text-zinc-600" />
+                    <Target className="mt-0.5 h-3.5 w-3.5 shrink-0 text-muted" />
                     <span className="line-clamp-2">{challenge.problem}</span>
                   </li>
                 ))}
@@ -197,17 +197,17 @@ function ProjectCard({
               {project.tech.slice(0, tagLimit).map((tech) => (
                 <span
                   key={tech}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-line bg-base/60 px-2.5 py-1 font-mono text-[10px] text-zinc-500 transition-colors group-hover:border-zinc-700"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-line bg-base/60 px-2.5 py-1 font-mono text-[10px] text-zinc-400 transition-colors group-hover:border-zinc-700"
                 >
                   {brandFor(tech) ? <TechIcon name={tech} className="h-3 w-3" /> : null}
                   {tech}
                 </span>
               ))}
               {hiddenTags > 0 ? (
-                <span className="font-mono text-[10px] text-zinc-700">+{hiddenTags}</span>
+                <span className="font-mono text-[10px] text-zinc-500">+{hiddenTags}</span>
               ) : null}
             </div>
-            <span className="shrink-0 font-mono text-[10px] text-zinc-700">{project.year}</span>
+            <span className="shrink-0 font-mono text-[10px] text-zinc-500">{project.year}</span>
           </div>
         </div>
       </div>
@@ -275,7 +275,7 @@ function ProjectModal({ project, onClose }: { project: Project | null; onClose: 
                 <h3 className="mt-3 text-xl font-semibold tracking-tight text-zinc-50">
                   {project.name}
                 </h3>
-                <p className="mt-1 text-sm text-zinc-500">{project.tagline}</p>
+                <p className="mt-1 text-sm text-zinc-400">{project.tagline}</p>
               </div>
               <button
                 ref={closeRef}
@@ -300,7 +300,7 @@ function ProjectModal({ project, onClose }: { project: Project | null; onClose: 
                       className="rounded-tile-sm border border-line bg-base/50 p-5"
                     >
                       <div className="flex gap-3">
-                        <Target className="mt-0.5 h-4 w-4 shrink-0 text-zinc-500" />
+                        <Target className="mt-0.5 h-4 w-4 shrink-0 text-zinc-400" />
                         <p className="text-[13px] leading-relaxed text-zinc-300">
                           {challenge.problem}
                         </p>
@@ -369,7 +369,7 @@ function ProjectModal({ project, onClose }: { project: Project | null; onClose: 
                   ) : null}
                 </footer>
               ) : (
-                <p className="border-t border-line pt-6 font-mono text-[11px] text-zinc-600">
+                <p className="border-t border-line pt-6 font-mono text-[11px] text-muted">
                   Internal enterprise system — source and deployment are private.
                 </p>
               )}

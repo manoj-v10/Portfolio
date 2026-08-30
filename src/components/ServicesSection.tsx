@@ -36,7 +36,7 @@ const TONES: Record<
   dark: {
     card: "border-line bg-tile",
     title: "text-zinc-50",
-    body: "text-zinc-500",
+    body: "text-zinc-400",
     bullet: "text-zinc-300",
     check: "text-accent",
     icon: "text-accent",

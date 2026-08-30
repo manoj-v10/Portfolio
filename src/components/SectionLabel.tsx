@@ -23,7 +23,7 @@ export function SectionLabel({ eyebrow, title, description, className }: Section
     >
       <motion.span
         variants={fadeUp}
-        className="inline-flex w-fit items-center gap-2 rounded-full border border-line bg-tile px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-500"
+        className="inline-flex w-fit items-center gap-2 rounded-full border border-line bg-tile px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-zinc-400"
       >
         <span className="h-1.5 w-1.5 rounded-full bg-accent" />
         {eyebrow}
@@ -37,7 +37,7 @@ export function SectionLabel({ eyebrow, title, description, className }: Section
       </motion.h2>
 
       {description ? (
-        <motion.p variants={fadeUp} className="max-w-xl text-[14px] leading-relaxed text-zinc-500">
+        <motion.p variants={fadeUp} className="max-w-xl text-[14px] leading-relaxed text-zinc-400">
           {description}
         </motion.p>
       ) : null}

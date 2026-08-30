@@ -41,7 +41,7 @@ export function WorkSection() {
                       {item.role}
                     </h3>
                     <p className="mt-1 text-sm text-zinc-400">{item.company}</p>
-                    <p className="mt-0.5 font-mono text-[11px] text-zinc-600">{item.location}</p>
+                    <p className="mt-0.5 font-mono text-[11px] text-muted">{item.location}</p>
                   </div>
                 </div>
 
@@ -51,7 +51,7 @@ export function WorkSection() {
                 </span>
               </div>
 
-              <p className="mt-5 max-w-3xl text-[14px] leading-relaxed text-zinc-500">
+              <p className="mt-5 max-w-3xl text-[14px] leading-relaxed text-zinc-400">
                 {item.summary}
               </p>
             </Tile>
@@ -63,7 +63,7 @@ export function WorkSection() {
                 <h4 className="mt-4 text-[13px] font-semibold leading-snug text-zinc-200">
                   {focus.title}
                 </h4>
-                <p className="mt-2 text-[12px] leading-relaxed text-zinc-500">
+                <p className="mt-2 text-[12px] leading-relaxed text-zinc-400">
                   {focus.description}
                 </p>
               </Tile>
@@ -87,7 +87,7 @@ export function WorkSection() {
                 {item.stack.map((tech) => (
                   <span
                     key={tech}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-line bg-base/60 px-2.5 py-1 font-mono text-[11px] text-zinc-500"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-line bg-base/60 px-2.5 py-1 font-mono text-[11px] text-zinc-400"
                   >
                     {brandFor(tech) ? <TechIcon name={tech} className="h-3 w-3" /> : null}
                     {tech}
