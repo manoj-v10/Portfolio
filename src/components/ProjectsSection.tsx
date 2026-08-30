@@ -14,9 +14,11 @@ import {
 } from "lucide-react";
 
 import { projects } from "@/config/portfolioData";
+import { brandFor } from "@/config/techIcons";
 import { staggerContainer, viewportOnce } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { SectionLabel } from "@/components/SectionLabel";
+import { TechIcon } from "@/components/TechIcon";
 import { Tile, TileLabel } from "@/components/Tile";
 import type { Project } from "@/types";
 
@@ -195,8 +197,9 @@ function ProjectCard({
               {project.tech.slice(0, tagLimit).map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full border border-line bg-base/60 px-2.5 py-1 font-mono text-[10px] text-zinc-500 transition-colors group-hover:border-zinc-700"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-line bg-base/60 px-2.5 py-1 font-mono text-[10px] text-zinc-500 transition-colors group-hover:border-zinc-700"
                 >
+                  {brandFor(tech) ? <TechIcon name={tech} className="h-3 w-3" /> : null}
                   {tech}
                 </span>
               ))}
@@ -331,8 +334,9 @@ function ProjectModal({ project, onClose }: { project: Project | null; onClose: 
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-full border border-line bg-base/60 px-3 py-1 font-mono text-[11px] text-zinc-400"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-line bg-base/60 px-3 py-1 font-mono text-[11px] text-zinc-400"
                     >
+                      {brandFor(tech) ? <TechIcon name={tech} className="h-3.5 w-3.5" /> : null}
                       {tech}
                     </span>
                   ))}

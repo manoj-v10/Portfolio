@@ -4,8 +4,10 @@ import { motion } from "framer-motion";
 import { Building2, TrendingUp } from "lucide-react";
 
 import { experience } from "@/config/portfolioData";
+import { brandFor } from "@/config/techIcons";
 import { staggerContainer, viewportOnce } from "@/lib/motion";
 import { SectionLabel } from "@/components/SectionLabel";
+import { TechIcon } from "@/components/TechIcon";
 import { Tile, TileLabel } from "@/components/Tile";
 
 export function WorkSection() {
@@ -85,8 +87,9 @@ export function WorkSection() {
                 {item.stack.map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-full border border-line bg-base/60 px-2.5 py-1 font-mono text-[11px] text-zinc-500"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-line bg-base/60 px-2.5 py-1 font-mono text-[11px] text-zinc-500"
                   >
+                    {brandFor(tech) ? <TechIcon name={tech} className="h-3 w-3" /> : null}
                     {tech}
                   </span>
                 ))}
