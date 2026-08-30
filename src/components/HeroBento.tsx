@@ -42,8 +42,9 @@ export function HeroBento() {
             </div>
 
             <div className="relative mt-6">
-              <h1 className="max-w-3xl text-balance text-[2rem] font-semibold leading-[1.04] tracking-tight text-gradient sm:text-[2.75rem] lg:text-[3.25rem]">
-                {profile.headline}
+              <h1 className="max-w-3xl text-balance text-[2rem] font-semibold leading-[1.04] tracking-tight sm:text-[2.75rem] lg:text-[3.25rem]">
+                <span className="text-gradient">{profile.headline} </span>
+                <span className="text-accent">{profile.headlineHighlight}</span>
               </h1>
               <p className="mt-4 max-w-2xl text-[13px] leading-relaxed text-zinc-500 sm:text-sm">
                 {profile.title} in {profile.location.split(",")[0]}. {profile.subheadline}

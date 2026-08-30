@@ -36,7 +36,8 @@ export const profile: Profile = {
   email: "manojvashee2003@gmail.com",
   phone: "+91 770-834-6030",
   availability: "Open for High-Impact Roles",
-  headline: "Building Enterprise platforms that hold up.",
+  headline: "Building Enterprise platforms with",
+  headlineHighlight: "Code & AI.",
   subheadline:
     "I build ERP integrations and the backend services behind them, the frontends that sit on top, and the web pages and dashboards that carry it all.",
   resumeHref: "/Manoj_V_FullStack_Developer_Resume.pdf",

@@ -15,6 +15,8 @@ export interface Profile {
   phone: string;
   availability: string;
   headline: string;
+  /** Trailing fragment of the headline, painted in the accent colour. */
+  headlineHighlight: string;
   subheadline: string;
   resumeHref: string;
   socials: SocialLink[];
